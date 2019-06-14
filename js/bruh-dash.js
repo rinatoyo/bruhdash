@@ -43,12 +43,11 @@ global.bruhdash = {
   },
 
   // returns an array with all elements except for the last element
-  initial: function (arr,arr2){ //slice
-    for(let i=0; i<arr.length-1; i++){
-      
-      }
-    }
-  },
+  initial: function (arr){ //slice
+    debugger;
+    arr.splice(2);
+    return arr;
+    },
   
   // returns an array with all falsey values removed
   compact: function() {
