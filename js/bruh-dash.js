@@ -44,14 +44,20 @@ global.bruhdash = {
 
   // returns an array with all elements except for the last element
   initial: function (arr){ //slice
-    debugger;
     arr.splice(2);
     return arr;
     },
   
   // returns an array with all falsey values removed
-  compact: function() {
-
+  compact: function(arr) {
+    debugger;
+    let noFalsy = [];
+    for(value of arr){
+      if(value){
+        noFalsy.push(value);
+      }
+    }
+    return noFalsy;
   },
 
   // creates a slice of an array from the start index up to but not including the end index
