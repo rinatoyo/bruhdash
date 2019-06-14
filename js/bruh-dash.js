@@ -20,18 +20,34 @@ global.bruhdash = {
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function () {
-
+  indexOf: function (arr, pos) {
+    // return arr.indexOf(pos);
+    for(let i=0; i<arr.length; i++){
+      if(arr[i]===pos){
+        return i;
+      }
+    }
+    return -1;
   },
 
-  // returns the index of the first matching element from right to left
-  lastIndexOf: function () {
 
+  // returns the index of the first matching element from right to left
+  lastIndexOf: function (arr, pos) {
+    // return arr.lastIndexOf(pos);
+    for(let i=arr.length-1; i>=0; i--){
+      if(arr[i]===pos){
+        return i;
+      }
+    }
+    return -1;
   },
 
   // returns an array with all elements except for the last element
-  initial: function () {
-
+  initial: function (arr,arr2){ //slice
+    for(let i=0; i<arr.length-1; i++){
+      
+      }
+    }
   },
   
   // returns an array with all falsey values removed
@@ -66,8 +82,17 @@ global.bruhdash = {
 
   // fills elements of array with specified value from the start index
   // up to but not including the end index
-  fill: function() {
-
+  fill: function(arr, val, start, end) {
+    if(start && end){
+      for(let i = start; i < end; i++){
+        arr[i] = val;
+      }
+    }else{
+      for(let i=0; i<arr.length; i++){
+        arr[i] = val;
+      }
+    }
+    return arr;
   },
 
   // removes all given values from an array
@@ -111,8 +136,12 @@ global.bruhdash = {
 
   // iterates over elements of a collection and invokes iteratee for each element
   // Note: this should work for arrays and objects
-  forEach: function() {
-
+  forEach: function(arr, func) {
+    // for(let i=0; i<arr.length; i++){
+    //   func(arr[i])
+    for(let key in arr){
+      func(arr[key])
+    }
   },
 
   // creates an array of values by running each element in collection thru the iteratee
